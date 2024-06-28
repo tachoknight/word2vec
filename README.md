@@ -1,3 +1,6 @@
+# My Copy
+This is my fork of this original repo so I could play around with it. I fixed a couple of numpy issues and it seems to work fine. Probably still want to use something more modern, but for playing around this is a good place.
+
 # NOT MAINTAINED
 
 - I have not used this code in a long time
