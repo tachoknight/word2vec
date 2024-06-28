@@ -206,7 +206,7 @@ class WordVectors(object):
             vocab_size, vector_size = list(map(int, header.split()))
 
             vocab = np.empty(vocab_size, dtype="<U%s" % vocab_unicode_size)
-            vectors = np.empty((vocab_size, vector_size), dtype=np.float)
+            vectors = np.empty((vocab_size, vector_size), dtype=float)
             binary_len = np.dtype(np.float32).itemsize * vector_size
             for i in range(vocab_size):
                 # read word
@@ -255,14 +255,14 @@ class WordVectors(object):
             vocab_size, vector_size = list(map(int, header.split()))
 
             vocab = np.empty(vocab_size, dtype="<U%s" % vocabUnicodeSize)
-            vectors = np.empty((vocab_size, vector_size), dtype=np.float)
+            vectors = np.empty((vocab_size, vector_size), dtype=float)
             for i, line in enumerate(fin):
                 line = line.decode(encoding).rstrip()
                 parts = line.split(" ")
                 word = parts[0]
                 include = desired_vocab is None or word in desired_vocab
                 if include:
-                    vector = np.array(parts[1:], dtype=np.float)
+                    vector = np.array(parts[1:], dtype=float)
                     vocab[i] = word
                     vectors[i] = unitvec(vector)
 
